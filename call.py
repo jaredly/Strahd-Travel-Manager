@@ -1,4 +1,4 @@
-import main
+from main import timePeriod
 
 dayRest = timePeriod(areTravel = False, isNight = False)
 dayTravel = timePeriod(areTravel = True, isNight = False)

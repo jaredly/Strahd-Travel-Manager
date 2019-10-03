@@ -1,5 +1,5 @@
-import specialRoles
-import encounterDictionaries
+from specialRolls import iRoll, sRoll
+from encounterDictionaries import dayEncounters, nightEncounters
 
 class timePeriod:
     def  __init__(self, vistGuide = False, isNight = False, areTravel = True, onRoad = True, recentEnc = 0, travelPace = "normal"):
@@ -67,12 +67,12 @@ class timePeriod:
                 travelCap = int(30)
                 travelRate = int(4)
                 travelDay = float(7.5)
-            if travelPace == "normal" or "Normal" or "n" or "N":
+            elif travelPace == "normal" or "Normal" or "n" or "N":
                 travelPace = 1
                 travelCap = int(24)
                 travelRate = int(3)
                 travelDay = int(8)
-            if travelPace == "slow" or "Slow" or "s" or "S":
+            elif travelPace == "slow" or "Slow" or "s" or "S":
                 travelPace = 0
                 travelCap = int(18)
                 travelRate = int(2)
@@ -100,9 +100,3 @@ class timePeriod:
         if self.recentEnc == self.startEnc:
             self.noEncounter()
 
-
-def ravens():
-    if iRoll('1d2') == 1:
-        return (sRoll('1d4') + " swarms of ravens")
-    else:
-        return "a wereraven"

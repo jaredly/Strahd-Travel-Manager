@@ -1,4 +1,10 @@
-import specialRolls # Allows D&D dice notation (1d6, 2d4, etc)
+from specialRolls import sRoll, iRoll # Allows D&D dice notation (1d6, 2d4, etc)
+
+def ravens():
+    if iRoll('1d2') == 1:
+        return (sRoll('1d4') + " swarms of ravens")
+    else:
+        return "a wereraven"
 
 dayEncounters = { #The possible encounters during the day; each iten corresponds to an entry in my notes
     "2": sRoll('3d6') + " Barovian commoners",
